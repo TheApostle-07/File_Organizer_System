@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Organizer System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <i class="fas fa-folder-open"></i> File Organizer System
+      </header>
+
+  <div class="container">
+    <!-- Sidebar Section -->
+    <div class="folders">
+      <h2><i class="fas fa-folder"></i> Folders</h2>
+      <ul id="folderList">
+        <!-- Folders will be dynamically rendered here -->
+      </ul>
+    </div>
+
+
+    
+    <!-- Main Content Section -->
+    <div class="main-content">
+      <!-- File Actions -->
+      <div class="file-action">
+        <h2><i class="fas fa-file"></i> Files</h2>
+        <div class="file-toolbar">
+          <input type="text" id="search" placeholder="Search files..." />
+          <button id="sortToggle"><i class="fas fa-sort"></i> Sort: Asc</button>
+        </div>
+      </div>
+      <!-- File List -->
+      <ul id="fileList" class="file-list">
+        <!-- Files will be dynamically rendered here -->
+      </ul>
+    </div>
+
+    <!-- Bin Section -->
+    <div class="bin">
+      <h2><i class="fas fa-trash"></i> Bin</h2>
+      <ul id="binList">
+        <!-- Deleted files will be dynamically rendered here -->
+      </ul>
+      <button id="clearBin"><i class="fas fa-trash-alt"></i> Clear Bin</button>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <p id="modalMessage"></p>
+      <div class="modal-buttons">
+        <button id="confirmAction"><i class="fas fa-check-circle"></i> Confirm</button>
+        <button id="cancelAction"><i class="fas fa-times-circle"></i> Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- File History Modal -->
+ <div id="historyModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>
+        <i class="fas fa-history"></i> File History
+      </h3>
+      <button id="closeHistory" class="close-btn" title="Close History">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <ul id="historyList" class="history-list">
+        <!-- History will be dynamically rendered here -->
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <button id="closeHistoryFooter" class="modal-footer-btn">
+        <i class="fas fa-times-circle"></i> Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Modal for Clear Bin -->
+<div id="clearBinModal" class="modal">
+    <div class="modal-content">
+      <h3><i class="fas fa-trash-alt"></i> Confirm Clear Bin</h3>
+      <p>These files will be permanently deleted. Are you sure you want to proceed?</p>
+      <div class="modal-buttons">
+        <button id="confirmClearBin"><i class="fas fa-check-circle"></i> Confirm</button>
+        <button id="cancelClearBin"><i class="fas fa-times-circle"></i> Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>File Organizer System &copy; 2024. Built by <b>Rufus Bright</b> with  <i class="fas fa-heart"></i>.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
